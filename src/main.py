@@ -9,29 +9,37 @@ from selenium.webdriver.common.by import By
 
 
 url = 'https://www.aruodas.lt/namai/vilniuje/antakalnyje/'
-target_button = "button[id*='onetrust-accept-btn-handler']"
 op = webdriver.FirefoxOptions()
 ffdriver = webdriver.Firefox(service=FFService('src/drivers/geckodriver_v0.31.0.exe'), options=op)
+
+target_button = "button[id*='onetrust-accept-btn-handler']"
 
 ffdriver.get(url)
 wait = WebDriverWait(ffdriver, 15)
 wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, target_button)))
 cookies_button = ffdriver.find_element(By.CSS_SELECTOR, target_button)
 cookies_button.click()
-price = 'tr:nth-child(4) > td.list-adress > div > span.list-item-price'
+# price = 'tr:nth-child(4) > td.list-adress > div > span.list-item-price'
 
 
-while(True):
-    next_page_button = ffdriver.find_element(By.LINK_TEXT, '»')
-    test_price = ffdriver.find_element(By.CSS_SELECTOR, price)
-    print(test_price.text)
-    time.sleep(1)
-    wait.until(EC.element_to_be_clickable((next_page_button)))
-    href_data = next_page_button.get_attribute('href')
-    if href_data is None:
-        break
-    else:
-        next_page_button.click()
+# while(True):
+#     next_page_button = ffdriver.find_element(By.LINK_TEXT, '»')
+#     test_price = ffdriver.find_element(By.CSS_SELECTOR, price)
+#     print(test_price.text)
+#     time.sleep(1)
+#     wait.until(EC.element_to_be_clickable((next_page_button)))
+#     href_data = next_page_button.get_attribute('href')
+#     if href_data is None:
+#         break
+#     else:
+#         next_page_button.click()
+
+rows = ffdriver.find_elements(By.CSS_SELECTOR, '*.list-row')
+
+for row in rows:
+    time.sleep(5)
+    price = row.find_element(By.CSS_SELECTOR, 'td.list-adress > div > span.list-item-price')
+    print(price.text)
 
     # wait.until(EC.element_to_be_clickable((By.LINK_TEXT, '»')))
     # next_page_button.click()
