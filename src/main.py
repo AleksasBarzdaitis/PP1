@@ -5,7 +5,9 @@ from selenium.webdriver.firefox.service import Service as FFService
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-
+from selenium.common.exceptions import NoSuchElementException
+import re
+import html
 
 
 url = 'https://www.aruodas.lt/namai/vilniuje/antakalnyje/'
@@ -19,30 +21,37 @@ wait = WebDriverWait(ffdriver, 15)
 wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, target_button)))
 cookies_button = ffdriver.find_element(By.CSS_SELECTOR, target_button)
 cookies_button.click()
-# price = 'tr:nth-child(4) > td.list-adress > div > span.list-item-price'
 
+def get_data():
+    rows = ffdriver.find_elements(By.CSS_SELECTOR, '*.list-row')
+    data = []
 
-# while(True):
-#     next_page_button = ffdriver.find_element(By.LINK_TEXT, '»')
-#     test_price = ffdriver.find_element(By.CSS_SELECTOR, price)
-#     print(test_price.text)
-#     time.sleep(1)
-#     wait.until(EC.element_to_be_clickable((next_page_button)))
-#     href_data = next_page_button.get_attribute('href')
-#     if href_data is None:
-#         break
-#     else:
-#         next_page_button.click()
+    time.sleep(2)
+    for row in rows:
+        try:
+            address = row.find_element(By.CSS_SELECTOR, 'td.list-adress > h3 > a')
+            price = row.find_element(By.CSS_SELECTOR, 'td.list-adress > div > span.list-item-price')
+            area = row.find_element(By.CSS_SELECTOR, 'td.list-AreaOverall')
+        except NoSuchElementException:
+            continue
+        delim = "\\n"
+        raw_text = "%r"%address.text
+        split_raw = raw_text.split(delim)
+        clean_address = ' '.join(split_raw)
+        data.append({"Address":clean_address, "Price":price.text, "Area":area.text})
+    for d in data:
+        print(d)
 
-rows = ffdriver.find_elements(By.CSS_SELECTOR, '*.list-row')
-
-for row in rows:
-    time.sleep(5)
-    price = row.find_element(By.CSS_SELECTOR, 'td.list-adress > div > span.list-item-price')
-    print(price.text)
-
-    # wait.until(EC.element_to_be_clickable((By.LINK_TEXT, '»')))
-    # next_page_button.click()
+while(True):
+    next_page_button = ffdriver.find_element(By.LINK_TEXT, '»')
+    get_data()
+    time.sleep(1)
+    wait.until(EC.element_to_be_clickable((next_page_button)))
+    href_data = next_page_button.get_attribute('href')
+    if href_data is None:
+        break
+    else:
+        next_page_button.click()
 
 time.sleep(1)
 
