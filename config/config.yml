@@ -29,95 +29,95 @@ logging:
             handlers: [ error_file ]
 
 urls:
-    #Antakalnyje
-#    url: 'https://www.aruodas.lt/namai/vilniuje/antakalnyje/'
+    #Antakalis
+    url: 'https://www.aruodas.lt/namai/vilniuje/antakalnyje/'
 
-    #Aukštuosiuose Paneriuose
+    #Aukštieji Paneriai
 #    url: 'https://www.aruodas.lt/namai/vilniuje/aukstuosiuose-paneriuose/'
 
-    #Bajoruose
+    #Bajorai
 #    url: 'https://www.aruodas.lt/namai/vilniuje/bajoruose/'
 
-    #Baltupiuose
+    #Baltupiai
 #    url: 'https://www.aruodas.lt/namai/vilniuje/baltupiuose/'
 
-    #Dvarcionyse
+    #Dvarcionys
 #    url: 'https://www.aruodas.lt/namai/vilniuje/dvarcionyse/'
 
-    #Fabijoniškėse
-    url: 'https://www.aruodas.lt/namai/vilniuje/fabijoniskese/'
+    #Fabijoniškės
+#    url: 'https://www.aruodas.lt/namai/vilniuje/fabijoniskese/'
 
-    #Jeruzalėje
+    #Jeruzalė
 #    url: 'https://www.aruodas.lt/namai/vilniuje/jeruzaleje/'
 
-    #Justiniškėse
+    #Justiniškės
 #    url: 'https://www.aruodas.lt/namai/vilniuje/justiniskese/'
 
-    #Karoliniškėse
+    #Karoliniškės
 #    url: 'https://www.aruodas.lt/namai/vilniuje/karoliniskese/'
 
-    #Lazdynuose
+    #Lazdynai
 #    url: 'https://www.aruodas.lt/namai/vilniuje/lazdynuose/'
 
-    #Lazdynėliuose
+    #Lazdynėliai
 #    url: 'https://www.aruodas.lt/namai/vilniuje/lazdyneliuose/'
 
-    #Liepkalnyje
+    #Liepkalnis
 #    url: 'https://www.aruodas.lt/namai/vilniuje/liepkalnyje/'
 
-    #Markuciuose
+    #Markuciai
 #    url: 'https://www.aruodas.lt/namai/vilniuje/markuciuose/'
 
-    #Naujamiestyje
+    #Naujamiestis
 #    url: 'https://www.aruodas.lt/namai/vilniuje/naujamiestyje/'
 
-    #Naujininkuose
+    #Naujininkai
 #    url: 'https://www.aruodas.lt/namai/vilniuje/naujininkuose/'
 
-    #Pašilaiciuose
+    #Pašilaiciai
 #    url: 'https://www.aruodas.lt/namai/vilniuje/pasilaiciuose/'
 
-    #Pavilnyje
+    #Pavilnys
 #    url: 'https://www.aruodas.lt/namai/vilniuje/pavilnyje/'
 
-    #Pilaitėje
+    #Pilaitė
 #    url: 'https://www.aruodas.lt/namai/vilniuje/pilaiteje/'
 
-    #Rasose
+    #Rasos
 #    url: 'https://www.aruodas.lt/namai/vilniuje/rasose/'
 
-    #Santariškėse
+    #Santariškės
 #    url: 'https://www.aruodas.lt/namai/vilniuje/santariskese/'
 
-    #Saulėtekyje
+    #Saulėtekis
 #    url: 'https://www.aruodas.lt/namai/vilniuje/sauletekyje/'
 
-    #Senamiestyje
+    #Senamiestis
 #    url: 'https://www.aruodas.lt/namai/vilniuje/senamiestyje/'
 
-    #Šnipiškėse
+    #Šnipiškės
 #    url: 'https://www.aruodas.lt/namai/vilniuje/snipiskese/'
 
-    #Turniškėse
+    #Turniškės
 #    url: 'https://www.aruodas.lt/namai/vilniuje/turniskese/'
 
-    #Užupyje
+    #Užupis
 #    url: 'https://www.aruodas.lt/namai/vilniuje/uzupyje/'
 
-    #Valakampiuose
+    #Valakampiai
 #    url: 'https://www.aruodas.lt/namai/vilniuje/valakampiuose/'
 
-    #Verkiuose
+    #Verkiai
 #    url: 'https://www.aruodas.lt/namai/vilniuje/verkiuose/'
 
-    #Vilkpėdėje
+    #Vilkpėdė
 #    url: 'https://www.aruodas.lt/namai/vilniuje/vilkpedeje/'
 
-    #Žemuosiuose Paneriuose
+    #Žemieji Paneriai
 #    url: 'https://www.aruodas.lt/namai/vilniuje/zemuosiuose-paneriuose/'
 
-    #Žirmūnuose
+    #Žirmūnai
 #    url: 'https://www.aruodas.lt/namai/vilniuje/zirmunuose/'
 
-    #Žvėryne
+    #Žvėrynas
 #    url: 'https://www.aruodas.lt/namai/vilniuje/zveryne/'
