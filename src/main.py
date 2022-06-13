@@ -9,10 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
-# os.chdir('..')
-print(">>>>")
-print(os.getcwd())
-print(">>>>")
+while os.getcwd().split('\\')[-1] != "PP1_scrape_me_home":
+        os.chdir('..')
 
 #Loading config file for logging
 with open('.\config\config.yml', 'r') as config:
