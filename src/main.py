@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
 while os.getcwd().split('\\')[-1] != "PP1_scrape_me_home":
-        os.chdir('..')
+    os.chdir('..')
 
 #Loading config file for logging
 with open('.\config\config.yml', 'r') as config:
@@ -63,7 +63,7 @@ def get_data():
         split_raw = raw_text.split(delim)
         clean_address = str(' '.join(split_raw))
         #Defining scraped info structure and adding to list
-        data.append({"Address":clean_address, "Price":price.text, "Area":area.text + " m²"})
+        data.append({"Address":clean_address, "Price":price.text, "Area":area.text + " m²", "URL":address.get_attribute('href')})
 
     #Printing scraped info
     for d in data:
