@@ -27,3 +27,97 @@ logging:
         error:
             level: DEBUG
             handlers: [ error_file ]
+
+urls:
+    #Antakalnyje
+#    url: 'https://www.aruodas.lt/namai/vilniuje/antakalnyje/'
+
+    #Aukštuosiuose Paneriuose
+#    url: 'https://www.aruodas.lt/namai/vilniuje/aukstuosiuose-paneriuose/'
+
+    #Bajoruose
+#    url: 'https://www.aruodas.lt/namai/vilniuje/bajoruose/'
+
+    #Baltupiuose
+#    url: 'https://www.aruodas.lt/namai/vilniuje/baltupiuose/'
+
+    #Dvarcionyse
+#    url: 'https://www.aruodas.lt/namai/vilniuje/dvarcionyse/'
+
+    #Fabijoniškėse
+    url: 'https://www.aruodas.lt/namai/vilniuje/fabijoniskese/'
+
+    #Jeruzalėje
+#    url: 'https://www.aruodas.lt/namai/vilniuje/jeruzaleje/'
+
+    #Justiniškėse
+#    url: 'https://www.aruodas.lt/namai/vilniuje/justiniskese/'
+
+    #Karoliniškėse
+#    url: 'https://www.aruodas.lt/namai/vilniuje/karoliniskese/'
+
+    #Lazdynuose
+#    url: 'https://www.aruodas.lt/namai/vilniuje/lazdynuose/'
+
+    #Lazdynėliuose
+#    url: 'https://www.aruodas.lt/namai/vilniuje/lazdyneliuose/'
+
+    #Liepkalnyje
+#    url: 'https://www.aruodas.lt/namai/vilniuje/liepkalnyje/'
+
+    #Markuciuose
+#    url: 'https://www.aruodas.lt/namai/vilniuje/markuciuose/'
+
+    #Naujamiestyje
+#    url: 'https://www.aruodas.lt/namai/vilniuje/naujamiestyje/'
+
+    #Naujininkuose
+#    url: 'https://www.aruodas.lt/namai/vilniuje/naujininkuose/'
+
+    #Pašilaiciuose
+#    url: 'https://www.aruodas.lt/namai/vilniuje/pasilaiciuose/'
+
+    #Pavilnyje
+#    url: 'https://www.aruodas.lt/namai/vilniuje/pavilnyje/'
+
+    #Pilaitėje
+#    url: 'https://www.aruodas.lt/namai/vilniuje/pilaiteje/'
+
+    #Rasose
+#    url: 'https://www.aruodas.lt/namai/vilniuje/rasose/'
+
+    #Santariškėse
+#    url: 'https://www.aruodas.lt/namai/vilniuje/santariskese/'
+
+    #Saulėtekyje
+#    url: 'https://www.aruodas.lt/namai/vilniuje/sauletekyje/'
+
+    #Senamiestyje
+#    url: 'https://www.aruodas.lt/namai/vilniuje/senamiestyje/'
+
+    #Šnipiškėse
+#    url: 'https://www.aruodas.lt/namai/vilniuje/snipiskese/'
+
+    #Turniškėse
+#    url: 'https://www.aruodas.lt/namai/vilniuje/turniskese/'
+
+    #Užupyje
+#    url: 'https://www.aruodas.lt/namai/vilniuje/uzupyje/'
+
+    #Valakampiuose
+#    url: 'https://www.aruodas.lt/namai/vilniuje/valakampiuose/'
+
+    #Verkiuose
+#    url: 'https://www.aruodas.lt/namai/vilniuje/verkiuose/'
+
+    #Vilkpėdėje
+#    url: 'https://www.aruodas.lt/namai/vilniuje/vilkpedeje/'
+
+    #Žemuosiuose Paneriuose
+#    url: 'https://www.aruodas.lt/namai/vilniuje/zemuosiuose-paneriuose/'
+
+    #Žirmūnuose
+#    url: 'https://www.aruodas.lt/namai/vilniuje/zirmunuose/'
+
+    #Žvėryne
+#    url: 'https://www.aruodas.lt/namai/vilniuje/zveryne/'
