@@ -5,7 +5,7 @@ Project's purpose is to scrape www.aruodas.lt for houses in Vilnius and print in
 
 ### Installation
 
-- Clone repository using code in CLI `git clone https://github.com/AleksasBarzdaitis/PP1`
+- Clone repository using code in CLI `git clone https://github.com/AleksasBarzdaitis/PP1_scrape_me_home`
 - Install requirements using code in CLI `pip install -r requirements.txt`
 
 ### Usage

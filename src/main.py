@@ -1,5 +1,6 @@
 import yaml
 import logging.config
+import os
 
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FFService
@@ -7,6 +8,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
+
+# os.chdir('..')
+print(">>>>")
+print(os.getcwd())
+print(">>>>")
 
 #Loading config file for logging
 with open('.\config\config.yml', 'r') as config:
