@@ -61,7 +61,7 @@ def get_data():
         delim = "\\n"
         raw_text = "%r"%address.text
         split_raw = raw_text.split(delim)
-        clean_address = str(' '.join(split_raw))
+        clean_address = ' '.join(split_raw)
         #Defining scraped info structure and adding to list
         data.append({"Address":clean_address, "Price":price.text, "Area":area.text + " m²", "URL":address.get_attribute('href')})
 
@@ -88,6 +88,7 @@ while(True):
     wait.until(EC.element_to_be_clickable((next_page_button)))
     href_data = next_page_button.get_attribute('href')
     if href_data is None:
+        main_logger.info(f'All available pages has been scraped successfully')
         break
     else:
         next_page_button.click()
