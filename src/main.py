@@ -17,7 +17,8 @@ with open('.\config\config.yml', 'r') as config:
     logging.config.dictConfig(yaml.safe_load(config)['logging'])
 
 main_logger = logging.getLogger('main')
-error_logger = logging.getLogger('error')
+error_logger_to_file = logging.getLogger('error_to_file')
+error_logger_to_console = logging.getLogger('error_to_console')
 
 #Loading config file to get url to scrape
 with open('.\config\config.yml', 'r') as config:
@@ -43,11 +44,6 @@ def get_data():
     rows = ffdriver.find_elements(By.CSS_SELECTOR, '*.list-row')
     data = []
 
-    #Waiting for page to load
-    wait.until(EC.text_to_be_present_in_element(
-        (By.CSS_SELECTOR, 'tr.search-mark > td > div > div.text'),
-        'SKELBIMŲ'))
-
     #Scraping info
     for row in rows:
         try:
@@ -55,13 +51,17 @@ def get_data():
             price = row.find_element(By.CSS_SELECTOR, 'td.list-adress > div > span.list-item-price')
             area = row.find_element(By.CSS_SELECTOR, 'td.list-AreaOverall')
         except NoSuchElementException:
-            error_logger.exception('No such element to select')
+            error_logger_to_file.exception('No such element to select')
             continue
         #Cleaning address text
-        delim = "\\n"
+        delim1 = "\\n"
+        delim2 = "'"
         raw_text = "%r"%address.text
-        split_raw = raw_text.split(delim)
-        clean_address = ' '.join(split_raw)
+
+        split_1 = raw_text.split(delim1)
+        join1 = ' '.join(split_1)
+        split_2 = join1.split(delim2)
+        clean_address = ' '.join(split_2)
         #Defining scraped info structure and adding to list
         data.append({"Address":clean_address, "Price":price.text, "Area":area.text + " m²", "URL":address.get_attribute('href')})
 
@@ -71,11 +71,20 @@ def get_data():
 
 #Scraping through pages
 while(True):
+    # Check if there is any search results
+    if ffdriver.find_elements(By.CSS_SELECTOR, 'div.error-div.error2 > b'):
+        error_logger_to_file.error(f'No search results in given URL ({url_to_scrape})')
+        error_logger_to_console.error(f'[ERROR]: No search results in given URL ({url_to_scrape})')
+        break
+    # Wait for page to load
+    wait.until(EC.text_to_be_present_in_element(
+        (By.CSS_SELECTOR, 'tr.search-mark > td > div > div.text'),
+        'SKELBIMŲ'))
     get_data()
     try:
         current_page = ffdriver.find_element(By.CSS_SELECTOR, 'a.active-page')
     except NoSuchElementException:
-        error_logger.exception('No such element to select')
+        error_logger_to_file.exception('No such element to select')
     try:
         main_logger.info(f'Page {current_page.text} scraped successfully')
     except NameError:

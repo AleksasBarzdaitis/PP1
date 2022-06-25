@@ -24,9 +24,12 @@ logging:
         main:
             level: DEBUG
             handlers: [ file ]
-        error:
+        error_to_file:
             level: DEBUG
             handlers: [ error_file ]
+        error_to_console:
+            level: DEBUG
+            handlers: [ console ]
 
 urls:
     #Antakalis
